@@ -1,49 +1,91 @@
-/* FONT */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
-    font-family: "Roboto Mono", monospace;
-    padding: 0;
-    margin: 0;
+    font-family: "Rubik", sans-serif;
 }
 
-title {
-    display: none;
-}
 
 body {
-    background-color: rgb(35, 22, 48);
+    background-color: black;
+    height: 160vh;
+}
+
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 70%;
+    margin: auto;
 }
 
-.container {
-    margin: 50px;
+.page-content {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    gap: 25px;
+    margin-top: 30px;
+    width: 95%;
+    gap: 20px;
 }
 
-.mcontainer {
-    margin: 50px;
+#navigationbar {
     display: flex;
-    flex-direction: column;
-    width: 80%;
-    gap: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
-.title {
-    font-size: 43px;
-    color: rgb(230, 204, 255);
-    margin-bottom: 5px;
+.navigationbutton {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    background-color: black;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 5px 0px 5px 0px;
+}
+
+.navigationbutton:hover {
+    filter: invert();
+}
+
+hr {
+    background-color: white;
+    color: white;
+    border: 0.5px solid white;
+    width: 100%;
 }
 
 .text {
-    font-size: 17px;
-    color: rgb(216, 174, 255);
+    font-size: 16px;
+    color: white;
+}
+
+.subtext {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.title {
+    font-size: 38px;
+    color: white;
+    margin: 15px 0 15px 0;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+a:hover {
+    color: rgba(255, 255, 255);
 }
 
 .project {
@@ -56,26 +98,16 @@ body {
     filter: grayscale(0%);
 }
 
-hr {
-    background-color: rgb(230, 204, 255);
-    color: rgb(230, 204, 255);
-    border: 1.5px  solid rgb(230, 204, 255);
+.projects {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 .socials {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-}
-
-#bottomtext {
-    color: rgb(216, 174, 255);
-}
-
-.projects {
-    display: flex;
-    gap: 20px;
-    align-items: center;
 }
 
 .sociallink {
@@ -88,15 +120,4 @@ hr {
     width: 18px;
     border-radius: 50%;
     margin-bottom: 10px;
-}
-#hi {
-    font-size: 70px
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
