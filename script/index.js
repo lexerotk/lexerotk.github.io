@@ -16,6 +16,14 @@ if (isMobile==true) {
 		document.getElementsByClassName("navigationbutton")[i].style.fontSize = "13px";
 	}
 
+	// NAVIGATION BUTTON PADDING
+	for (let i = 0; i < document.getElementsByClassName("navigationbutton").length; i++) {
+		document.getElementsByClassName("navigationbutton")[i].style.padding = "15px";
+	}
+	
+	// UL GAP SIZE
+	document.getElementById("navUl").style.gap = "5px"
+	
 	// CONTAINER WIDTH
 	document.getElementById("container").style.width = "90%"
 }
