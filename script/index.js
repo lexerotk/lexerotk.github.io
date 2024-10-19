@@ -13,7 +13,7 @@ if (isMobile==true) {
 
 	// NAVIGATION BAR TEXT SIZE
 	for (let i = 0; i < document.getElementsByClassName("navigationbutton").length; i++) {
-		document.getElementsByClassName("navigationbutton")[i].style.fontSize = "13px";
+		document.getElementsByClassName("navigationbutton")[i].style.fontSize = "14px";
 	}
 
 	// NAVIGATION BUTTON PADDING
