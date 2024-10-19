@@ -10,7 +10,7 @@ body {
     height: 160vh;
 }
 
-.container {
+#container {
     display: flex;
     align-items: center;
     justify-content: center;
