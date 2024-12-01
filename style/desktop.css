@@ -4,6 +4,10 @@
     font-family: "Rubik", sans-serif;
 }
 
+#loading {
+    display: none;
+}
+
 body {
     background-color: black;
     overflow: visible;

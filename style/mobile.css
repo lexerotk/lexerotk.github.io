@@ -9,6 +9,11 @@ body {
     overflow: visible;
 }
 
+
+#loading {
+    display: none;
+}
+
 #container {
     display: flex;
     align-items: center;
