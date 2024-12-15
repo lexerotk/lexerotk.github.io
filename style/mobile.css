@@ -31,7 +31,7 @@ body {
     gap: 20px;
 }
 
-#navigationbar {
+nav {
     display: flex;
     align-items: center;
     justify-content: center;
