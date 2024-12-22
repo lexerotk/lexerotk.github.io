@@ -1,0 +1,31 @@
+@import url(https://github.com/blobject/agave/releases/latest/download/Agave-Regular.ttf);
+
+* {
+    font-family: Agave, monospace;
+}
+
+html {
+    height: 100vh;
+    overflow: visible;
+}
+
+body {
+    background-color: black;
+    overflow: auto;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#hello {
+    font-size: 35px;
+    transition: all .3s ease-out;
+    font-weight: 700;
+}
