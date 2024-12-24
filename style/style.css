@@ -1,4 +1,9 @@
-@import url("https://lexerotk.tixte.co/r/Agave-Regular.ttf");
+@font-face {
+    font-family: 'Agave';
+    src: url('https://lexerotk.tixte.co/r/Agave-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     font-family: Agave, monospace;
