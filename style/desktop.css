@@ -9,6 +9,10 @@
     font-family: Agave, monospace;
 }
 
+#loading {
+    display: none;
+}
+
 html {
     height: 100vh;
     overflow: visible;
