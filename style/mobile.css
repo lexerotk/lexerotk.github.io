@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Agave';
+    src: url('https://lexerotk.tixte.co/r/Agave-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: Agave, monospace;
+}
+
+html {
+    height: 100vh;
+    overflow: visible;
+}
+
+body {
+    background-color: #000;
+    overflow: auto;
+}
+
+.text {
+    color: white;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100%;
+    flex-direction: column;
+    gap: clamp(40px,10vh,60px);
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+}
+
+#username {
+    font-size: clamp(20px, 2.5vw, 35px);
+    font-weight: 900;
+    text-decoration: none;
+    color: white;
+}
+
+#avatar {
+    width: clamp(200px, 11vw, 250px);
+    margin: 20px;
+    border-radius: 50%;
+    transition: border-radius .3s ease;
+}
+
+#avatar:hover {
+    border-radius: 8%;
+    transition: border-radius .3s ease-in-out;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    margin: clamp(10px, 3vh, 20px)
+}
+
+#social {
+    flex-direction: row;
+    gap: clamp(18px, 2vw, 30px)
+}
+
+.socialicons{
+    width: clamp(56px, 3vw, 64px);
+    border-radius: 50%;
+}
+
+button {
+    background-color: #000;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+}
