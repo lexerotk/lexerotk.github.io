@@ -7,9 +7,9 @@ function about(){
 }
 
 function thoughts(){
-    window.location.href = "/thoughts.html"
+    location.href = "/thoughts.html"
 }
 
-function moreaboutmyself(){
-    location.href = "/moreaboutmyself.html"
+function reviewme(){
+    location.href = "https://forms.gle/DkNabnkPMUVi1eoGA"
 }
