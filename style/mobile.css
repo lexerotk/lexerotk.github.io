@@ -9,13 +9,13 @@
     font-family: Agave, monospace;
 }
 
+#loading {
+    display: none;
+}
+
 html {
     height: 100vh;
     overflow: visible;
-}
-
-#loading {
-    display: none;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
 
 .text {
     color: white;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .container {
@@ -52,7 +52,7 @@ a {
 }
 
 #avatar {
-    width: clamp(200px, 11vw, 250px);
+    width: clamp(175px, 11vw, 250px);
     margin: 20px;
     border-radius: 50%;
     transition: border-radius .3s ease;
@@ -73,13 +73,16 @@ a {
 }
 
 #social {
+    flex-wrap: wrap;
+    flex-direction: column;
     flex-direction: row;
     gap: clamp(18px, 2vw, 30px)
 }
 
 .socialicons{
-    width: clamp(56px, 3vw, 64px);
+    width: clamp(40px, 12vw, 52px);
     border-radius: 50%;
+    
 }
 
 button {
@@ -87,8 +90,33 @@ button {
     border: 3px solid white;
     border-radius: 20px;
     padding: 15px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 800;
     color: white;
     cursor: pointer;
+}
+
+h1 {
+    font-size: clamp(25px, 7vw, 35px);
+    font-weight: 900;
+}
+
+.box {
+    overflow:visible;
+    width: clamp(180px, 30vw, 260px);
+    height: clamp(180px, 30vw, 260px);;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: clamp(10px, 3vh, 20px);
+    border: 2px solid white;
+    border-radius: 7%;
+    padding: 30px;
+}
+
+.box > .text {
+    font-size: clamp(13px, 2.1vw, 17px);
+    text-align: center;
+    font-style: italic;
 }
