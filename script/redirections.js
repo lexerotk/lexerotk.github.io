@@ -9,3 +9,7 @@ function about(){
 function thoughts(){
     location.href = "/thoughts.html"
 }
+
+function coolpeople(){
+    location.href = "/coolpeople.html"
+}
