@@ -173,7 +173,7 @@ h1 {
 
 .thought {
     overflow: visible;
-    width: clamp(300px, 53vw, 750px);
+    width: clamp(275px, 50vw, 750px);
     height: auto;
     display: flex;
     align-items: center;
@@ -189,5 +189,5 @@ h1 {
 }
 
 .thought > .text {
-    font-size: clamp(18px, 3vw, 22px)
+    font-size: clamp(16px, 2.5vw, 20px)
 }
