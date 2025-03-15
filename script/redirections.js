@@ -1,15 +1,23 @@
 function home(){
-    location.href = "/index.html"
+    location.href = "/pages/index.html"
 }
 
 function about(){
-    location.href = "/about.html"
+    location.href = "/pages/about.html"
 }
 
 function thoughts(){
-    location.href = "/thoughts.html"
+    location.href = "/pages/thoughts.html"
 }
 
 function coolpeople(){
-    location.href = "/coolpeople.html"
+    location.href = "/pages/coolpeople.html"
+}
+
+function music(){
+    location.href = "/pages/music.html"
+}
+
+function contact(){
+    location.href = "/pages/contact.html"
 }

@@ -187,3 +187,15 @@ h1 {
 .thought > .text {
     font-size: clamp(18px, 3vw, 22px)
 }
+
+hr {
+    background-color: white;
+    color: white;
+    border: 1px solid white;
+    width: 65%;
+}
+
+
+.spotifyiframe {
+    width: 200%;
+}
