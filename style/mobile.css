@@ -103,8 +103,8 @@ h1 {
 
 .box {
     overflow:visible;
-    width: clamp(180px, 30vw, 260px);
-    height: clamp(180px, 30vw, 260px);;
+    width: clamp(200px, 32vw, 280px);
+    height: clamp(200px, 32vw, 280px);;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,7 +116,7 @@ h1 {
 }
 
 .box > .text {
-    font-size: clamp(13px, 2.1vw, 17px);
+    font-size: clamp(15px, 2.1vw, 17px);
     text-align: center;
     font-style: italic;
 }
