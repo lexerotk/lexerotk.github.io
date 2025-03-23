@@ -1,4 +1,4 @@
-#  [lexerotk.github.io](https://lexerotk.github.io)
+#  [lexerotk.me](https://lexerotk.me)
 
 ![image](https://github.com/user-attachments/assets/f97d76bc-1340-4518-90a0-da1fbcee075b)
 
