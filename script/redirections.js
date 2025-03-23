@@ -1,5 +1,5 @@
 function home(){
-    location.href = "/pages/index.html"
+    location.href = "/index.html"
 }
 
 function about(){
