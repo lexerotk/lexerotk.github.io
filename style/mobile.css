@@ -202,3 +202,10 @@ hr {
 .spotifyiframe {
     width: 100%;
 }
+
+#quote {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
