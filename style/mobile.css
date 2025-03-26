@@ -28,7 +28,7 @@ body {
     font-size: 15px;
 }
 
-.container {
+#container {
     display: flex;
     align-items: center;
     justify-content: center;
