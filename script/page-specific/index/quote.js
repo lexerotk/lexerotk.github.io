@@ -7,7 +7,8 @@ const quotes  = [
     "What am I doing wrong?",
     "terrible creatures...",
     "I'm tired of this.",
-    "Nah. I'm fed up."
+    "Nah. I'm fed up.",
+    "There is nothing I can do."
 ]
 let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
 
