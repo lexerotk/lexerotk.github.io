@@ -26,7 +26,6 @@ body {
 .text {
     color: white;
     font-size: 15px;
-    text-align: center;
 }
 
 #container {
@@ -209,4 +208,9 @@ hr {
     font-size: 14px;
     font-style: italic;
     text-align: center;
+}
+
+.pagenotice {
+    text-align: center;
+    width: 80%;
 }
