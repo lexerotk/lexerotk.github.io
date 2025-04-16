@@ -6,7 +6,11 @@ const quotes  = [
     "I'm tired of this.",
     "There is nothing I can do.",
     "Overthinking is a torture.",
-    "Am I too naive..?"
+    "Am I too naive..?",
+    "Nobody",
+    "No one",
+    "Weirdo",
+    '"Professional Friendship Ruiner"'
 ]
 
 let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
