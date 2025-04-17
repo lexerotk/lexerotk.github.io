@@ -10,7 +10,7 @@ const quotes  = [
     "Nobody",
     "No one",
     "Weirdo",
-    '"Professional Friendship Ruiner"'
+    "Despair"
 ]
 
 let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
