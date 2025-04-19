@@ -64,6 +64,7 @@ a {
 }
 
 section {
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,7 +197,7 @@ hr {
     background-color: white;
     color: white;
     border: 1px solid white;
-    width: 65%;
+    width: 80%;
 }
 
 .spotifyiframe {
