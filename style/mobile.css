@@ -226,3 +226,11 @@ footer {
     margin-top: clamp(10x, 3vh, 30px);
     margin-bottom: clamp(10px, 3vh, 30px);
 }
+
+#goback {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: x-large;
+    padding: 10px;
+}
