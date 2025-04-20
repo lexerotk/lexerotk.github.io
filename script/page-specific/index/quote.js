@@ -1,6 +1,7 @@
 const quotes  = [
     "Embrace Darkness.",
     "Trust is the key of friendships.",
+    "I tried. And tried more. But just tired myself.",
     "Fuck you TEMPER :clown:"
 ]
 
