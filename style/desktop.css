@@ -211,3 +211,14 @@ hr {
     text-align: center;
     width: 80%;
 }
+
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: clamp(10x, 3vh, 30px);
+    margin-bottom: clamp(10px, 3vh, 30px)
+}
