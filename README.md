@@ -2,8 +2,10 @@
 
 ![image](https://github.com/user-attachments/assets/f97d76bc-1340-4518-90a0-da1fbcee075b)
 
-This is a website project for creating some kind of personal website for myself. And one of my first website projects. So it will definitely not look perfect.
+This is a project for creating some kind of personal website for myself. And this is also being one of my first website projects too. So don't expect it to be perfect for your eyes.
 
-Coded with HTML, CSS and JavaScript.
+Coded with plain HTML, CSS and JavaScript. Nothing special.
 
-Using [Umami](https://umami.is/) for measuring page traffic.
+Hosting is by [Github Pages](https://github.io)
+
+Using [Umami](https://umami.is/) for measuring page traffic. Which is open-source and privacy focused.
