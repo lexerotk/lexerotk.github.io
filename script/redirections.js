@@ -21,3 +21,7 @@ function music(){
 function contact(){
     location.href = "/pages/contact.html"
 }
+
+function temper(){
+    location.href = "/pages/temperthewhore.html"
+}

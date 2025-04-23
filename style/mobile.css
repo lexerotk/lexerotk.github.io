@@ -201,7 +201,7 @@ hr {
 }
 
 .spotifyiframe {
-    width: 100%;
+    width: 90%;
 }
 
 #quote {
@@ -233,4 +233,9 @@ footer {
     left: 10px;
     font-size: x-large;
     padding: 10px;
+}
+
+.funnyimage {
+    max-width: 300px;
+    max-height: 300px;
 }
