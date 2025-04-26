@@ -6,20 +6,21 @@ async function proxyCheck() {
       const ipData = await ipRes.json();
       const ip = ipData.ip;
   
-      const apiKey = 'XCkWPdabPg8stIapqVEchzNZQyzHLiIa'; 
-      const qualityRes = await fetch(`https://webhook-forwarder-ashen.vercel.app/api/qualityscore?ip=${ip}`);
-      const qualityData = await qualityRes.json();
+      const proxyCheckAPIRes= await fetch(`https://webhook-forwarder-ashen.vercel.app/api/proxyCheck?ip=${ip}`);
+      const proxyCheckAPI = await proxyCheckAPIRes.json();
   
-      console.log('IP Quality Data:', qualityData);
+      console.log('ProxyCheck.io:', proxyCheckAPI);
   
-      const isVpn = qualityData.vpn;
-      const isProxy = qualityData.proxy;
-      const isTor = qualityData.tor;
-      const isHost = qualityData.host;
-      const asn = qualityData.asn || "Unknown";
-      const isp = qualityData.isp || "Unknown";
-      const country = qualityData.country_code || "Unknown";
-      const city = qualityData.city || "Unknown";
+      const isProxy = proxyCheckAPI.proxy;
+      const proxyType = proxyCheckAPI.type;
+      const risk = proxyCheckAPI.risk;
+      const operator = proxyCheckAPI.operator || "Unknown";
+      const asn = proxyCheckAPI.asn || "Unknown";
+      const location = "Latitude:" + proxyCheckAPI.latitude + "Longitude:" + proxyCheckAPI.latitude
+      const provider = proxyCheckAPI.provider || "Unknown";
+      const country = proxyCheckAPI.country || "Unknown";
+      const region = proxyCheckAPI.region || "Unknown";
+      const city = proxyCheckAPI.city || "Unknown";
   
       const parser = new UAParser();
       const deviceInfo = parser.getResult();
@@ -28,7 +29,7 @@ async function proxyCheck() {
       const browserVersion = deviceInfo.browser.version || "Unknown";
       const osName = deviceInfo.os.name || "Unknown";
       const osVersion = deviceInfo.os.version || "Unknown";
-      const deviceType = deviceInfo.device.type || "Desktop"; 
+      const deviceType = deviceInfo.device.type || "? Desktop ?"; 
   
       if (isVpn || isProxy || isTor || isHost) {
         await fetch('https://webhook-forwarder-ashen.vercel.app/api/forward', {
@@ -43,13 +44,15 @@ async function proxyCheck() {
                 fields: [
                   { name: '🌐 IP', value: ip, inline: true },
                   { name: '🌎 Country', value: country, inline: true },
+                  { name: '🏙️ Region', value: region, inline: true },
                   { name: '🏙️ City', value: city, inline: true },
-                  { name: '🏢 ISP', value: isp, inline: false },
-                  { name: '🔢 ASN', value: `AS${asn}`, inline: true },
-                  { name: '🛡️ VPN', value: isVpn ? ":white_check_mark:" : ":x:", inline: true },
-                  { name: '🛡️ Proxy', value: isProxy ? ":white_check_mark:" : ":x:", inline: true },
-                  { name: '🛡️ TOR', value: isTor ? ":white_check_mark:" : ":x:", inline: true },
-                  { name: '🏢 Hosting', value: isHost ? ":white_check_mark:" : ":x:", inline: true },
+                  { name: '📍 Location', value: location, inline: false },
+                  { name: '🏢 ISP', value: provider, inline: false },
+                  { name: '🔢 ASN', value: `${asn}`, inline: true },
+                  { name: '🛡️ Proxy', value: isProxy, inline: true },
+                  { name: '🛡️ Proxy Type', value: proxyType, inline: true },
+                  { name: '🛡️ Risk', value: risk, inline: true },
+                  { name: '🛡️ Operator', value: operator, inline: true },
                   { name: '📄 Path', value: window.location.href, inline: false },
                   { name: '🖥️ Device Type', value: deviceType, inline: true },
                   { name: '🌐 Browser', value: `${browserName} ${browserVersion}`, inline: true },
