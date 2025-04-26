@@ -1,57 +1,79 @@
+import("https://cdn.jsdelivr.net/npm/ua-parser-js/dist/ua-parser.min.js")
+
 async function proxyCheck() {
-  try {
-    const ipResponse = await fetch('https://api.ipify.org?format=json');
-    const ipData = await ipResponse.json();
-    const ip = ipData.ip;
-    
-    const vpnApiKey = '90bdadf374a44f1eb2bba44236d63467';
-    const vpnResponse = await fetch(`https://vpnapi.io/api/${ip}?key=${vpnApiKey}`);
-    const vpnData = await vpnResponse.json();
-
-    console.log('VPN API Info:', vpnData);
-
-    const isVpn = vpnData.security.vpn;
-    const isProxy = vpnData.security.proxy;
-    const isTor = vpnData.security.tor;
-    const currentPage = window.location.pathname;
-
-    if (isVpn || isProxy || isTor) {
-        
-        await fetch('https://discord.com/api/webhooks/1365641719181479946/2hBBZAU7XDtoMiEjv0v3nOeRP5H2KHetDpNR0FdYLlGq4OuOjLD-7JVfOVquz7NPbvWq', {
+    try {
+      // IP'yi al
+      const ipRes = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipRes.json();
+      const ip = ipData.ip;
+  
+      // IPQualityScore API ile IP'yi kontrol et
+      const apiKey = 'XCkWPdabPg8stIapqVEchzNZQyzHLiIa'; 
+      const qualityRes = await fetch(`https://webhook-forwarder-ashen.vercel.app/api/qualityscore?ip=${ip}`);
+      const qualityData = await qualityRes.json();
+  
+      console.log('IP Quality Data:', qualityData);
+  
+      // IP ile ilgili bilgiler
+      const isVpn = qualityData.vpn;
+      const isProxy = qualityData.proxy;
+      const isTor = qualityData.tor;
+      const isHost = qualityData.host;
+      const asn = qualityData.asn || "Unknown";
+      const isp = qualityData.isp || "Unknown";
+      const country = qualityData.country_code || "Unknown";
+      const city = qualityData.city || "Unknown";
+  
+      // Cihaz bilgileri (UAParser ile)
+      const parser = new UAParser();
+      const deviceInfo = parser.getResult();
+  
+      const browserName = deviceInfo.browser.name || "Unknown";
+      const browserVersion = deviceInfo.browser.version || "Unknown";
+      const osName = deviceInfo.os.name || "Unknown";
+      const osVersion = deviceInfo.os.version || "Unknown";
+      const deviceType = deviceInfo.device.type || "Desktop"; // Yoksa Desktop diyelim
+  
+      // VPN/Proxy/TOR varsa yönlendir
+      if (isVpn || isProxy || isTor || isHost) {
+        await fetch('https://webhook-forwarder-ashen.vercel.app/api/forward', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
               embeds: [{
-                title: 'New Visitor Control',
-                color: isVpn || isProxy || isTor ? 16711680 : 65280, // Red (VPN) or Green (Normal)
+                title: '🛡️ VPN Detection Log',
+                color: (isVpn || isProxy || isTor || isHost) ? 16711680 : 65280,
                 fields: [
-                  { name: 'IP Address', value: ip, inline: true },
-                  { name: 'Country', value: vpnData.location.country, inline: true },
-                  { name: 'City', value: vpnData.location.city || "Unknown", inline: true },
-                  { name: 'ISP', value: vpnData.network.organization || "Unknown", inline: false },
-                  { name: 'ASN', value: "AS" + (vpnData.network.autonomous_system_number || "Unknown"), inline: true },
-                  { name: 'VPN', value: (isVpn ? "Using VPN" : isProxy ? "Using Proxy" : isTor ? "Using Tor Network" : "Normal Connection"), inline: false },
-                  { name: 'Path:', value: currentPage, inline: false },
-                  { name: 'API Response', value: "```" + vpnData + "```", inline: false }
-                  
-
+                  { name: '🌐 IP', value: ip, inline: true },
+                  { name: '🌎 Ülke', value: country, inline: true },
+                  { name: '🏙️ Şehir', value: city, inline: true },
+                  { name: '🏢 ISP', value: isp, inline: false },
+                  { name: '🔢 ASN', value: `AS${asn}`, inline: true },
+                  { name: '🛡️ VPN', value: isVpn ? ":white_check_mark:" : ":x:", inline: true },
+                  { name: '🛡️ Proxy', value: isProxy ? ":white_check_mark:" : ":x:", inline: true },
+                  { name: '🛡️ TOR', value: isTor ? ":white_check_mark:" : ":x:", inline: true },
+                  { name: '🏢 Hosting Provider IP', value: isHost ? ":white_check_mark:" : ":x:", inline: true },
+                  { name: '📄 Sayfa', value: window.location.href, inline: false },
+                  { name: '🖥️ Cihaz Türü', value: deviceType, inline: true },
+                  { name: '🌐 Tarayıcı', value: `${browserName} ${browserVersion}`, inline: true },
+                  { name: '💻 İşletim Sistemi', value: `${osName} ${osVersion}`, inline: true }
                 ],
-                footer: {
-                  text: 'VPN Detection System'
-                },
-                timestamp: new Date()
+                footer: { text: "VPN Detection System" },
+                timestamp: new Date().toISOString()
               }]
             })
           });
-          window.location.href = "/proxy-detected.html"; 
-          return;
+
+        window.location.href = "/proxy-detected.html"; 
+        return;
+      }
+  
+    } catch (error) {
+      console.error('VPN CHECK ERROR:', error);
     }
-
-  } catch (error) {
-    console.error('Proxy/VPN Check Error:', error);
   }
-}
-
-proxyCheck();
+  
+  proxyCheck();
+  
