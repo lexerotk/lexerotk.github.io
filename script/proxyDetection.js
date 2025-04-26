@@ -12,6 +12,7 @@ async function proxyCheck() {
       console.log('ProxyCheck.io:', proxyCheckAPI);
   
       const isProxy = proxyCheckAPI.proxy;
+      const isVPN = proxyCheckAPI.vpn;
       const proxyType = proxyCheckAPI.type;
       const risk = proxyCheckAPI.risk;
       const operator = proxyCheckAPI.operator || "Unknown";
@@ -31,7 +32,7 @@ async function proxyCheck() {
       const osVersion = deviceInfo.os.version || "Unknown";
       const deviceType = deviceInfo.device.type || "? Desktop ?"; 
   
-      if (isVpn || isProxy || isTor || isHost) {
+      if (isProxy == "yes" || isVPN == "yes") {
         await fetch('https://webhook-forwarder-ashen.vercel.app/api/forward', {
             method: 'POST',
             headers: {
@@ -40,7 +41,7 @@ async function proxyCheck() {
             body: JSON.stringify({
               embeds: [{
                 title: '🛡️ VPN/Proxy Detection Log',
-                color: (isVpn || isProxy || isTor || isHost) ? 16711680 : 65280,
+                color: '#FF0000',
                 fields: [
                   { name: '🌐 IP', value: ip, inline: true },
                   { name: '🌎 Country', value: country, inline: true },
@@ -49,6 +50,7 @@ async function proxyCheck() {
                   { name: '📍 Location', value: location, inline: false },
                   { name: '🏢 ISP', value: provider, inline: false },
                   { name: '🔢 ASN', value: `${asn}`, inline: true },
+                  { name: '🛡️ Proxy', value: isProxy, inline: true },
                   { name: '🛡️ Proxy', value: isProxy, inline: true },
                   { name: '🛡️ Proxy Type', value: proxyType, inline: true },
                   { name: '🛡️ Risk', value: risk, inline: true },
