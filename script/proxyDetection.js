@@ -9,19 +9,19 @@ async function proxyCheck() {
       const proxyCheckAPIRes= await fetch(`https://webhook-forwarder-ashen.vercel.app/api/proxyCheck?ip=${ip}`);
       const proxyCheckAPI = await proxyCheckAPIRes.json();
   
-      console.log('ProxyCheck.io:', proxyCheckAPI);
+      console.log('ProxyCheck.io:', proxyCheckAPI[ip]);
   
-      const isProxy = proxyCheckAPI.proxy;
-      const isVPN = proxyCheckAPI.vpn;
-      const proxyType = proxyCheckAPI.type;
-      const risk = proxyCheckAPI.risk;
-      const operator = proxyCheckAPI.operator || "Unknown";
-      const asn = proxyCheckAPI.asn || "Unknown";
-      const location = "Latitude:" + proxyCheckAPI.latitude + "Longitude:" + proxyCheckAPI.latitude
-      const provider = proxyCheckAPI.provider || "Unknown";
-      const country = proxyCheckAPI.country || "Unknown";
-      const region = proxyCheckAPI.region || "Unknown";
-      const city = proxyCheckAPI.city || "Unknown";
+      const isProxy = proxyCheckAPI[ip].proxy;
+      const isVPN = proxyCheckAPI[ip].vpn;
+      const proxyType = proxyCheckAPI[ip].type;
+      const risk = proxyCheckAPI[ip].risk;
+      const operator = proxyCheckAPI[ip].operator || "Unknown";
+      const asn = proxyCheckAPI[ip].asn || "Unknown";
+      const location = "Latitude:" + proxyCheckAPI[ip].latitude + "Longitude:" + proxyCheckAPI[ip].latitude
+      const provider = proxyCheckAPI[ip].provider || "Unknown";
+      const country = proxyCheckAPI[ip].country || "Unknown";
+      const region = proxyCheckAPI[ip].region || "Unknown";
+      const city = proxyCheckAPI[ip].city || "Unknown";
   
       const parser = new UAParser();
       const deviceInfo = parser.getResult();
