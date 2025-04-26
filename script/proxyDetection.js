@@ -17,7 +17,7 @@ async function proxyCheck() {
       const risk = proxyCheckAPI[ip].risk;
       const operator = proxyCheckAPI[ip].operator || "Unknown";
       const asn = proxyCheckAPI[ip].asn || "Unknown";
-      const location = "Latitude:" + proxyCheckAPI[ip].latitude + "Longitude:" + proxyCheckAPI[ip].latitude
+      const location = "Latitude: " + proxyCheckAPI[ip].latitude + " Longitude: " + proxyCheckAPI[ip].latitude
       const provider = proxyCheckAPI[ip].provider || "Unknown";
       const country = proxyCheckAPI[ip].country || "Unknown";
       const region = proxyCheckAPI[ip].region || "Unknown";
@@ -41,7 +41,6 @@ async function proxyCheck() {
             body: JSON.stringify({
               embeds: [{
                 title: '🛡️ VPN/Proxy Detection Log',
-                color: '#FF0000',
                 fields: [
                   { name: '🌐 IP', value: ip, inline: true },
                   { name: '🌎 Country', value: country, inline: true },
@@ -51,7 +50,7 @@ async function proxyCheck() {
                   { name: '🏢 ISP', value: provider, inline: false },
                   { name: '🔢 ASN', value: `${asn}`, inline: true },
                   { name: '🛡️ Proxy', value: isProxy, inline: true },
-                  { name: '🛡️ Proxy', value: isProxy, inline: true },
+                  { name: '🛡️ VPN', value: isVPN, inline: true },
                   { name: '🛡️ Proxy Type', value: proxyType, inline: true },
                   { name: '🛡️ Risk', value: risk, inline: true },
                   { name: '🛡️ Operator', value: operator, inline: true },
