@@ -97,6 +97,7 @@ button {
 h1 {
     font-size: clamp(25px, 2.2vw, 35px);
     font-weight: 900;
+    margin-bottom: 0;
 }
 
 .box {
