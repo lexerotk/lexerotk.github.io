@@ -70,7 +70,7 @@ section {
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-    margin: clamp(10px, 3vh, 20px)
+    margin: clamp(10px, 3vh, 20px);
 }
 
 #social {
@@ -100,6 +100,7 @@ button {
 h1 {
     font-size: clamp(25px, 7vw, 35px);
     font-weight: 900;
+    margin-bottom: 0;
 }
 
 .box {
@@ -230,10 +231,11 @@ footer {
 
 #goback {
     position: fixed;
-    top: 10px;
-    left: 10px;
-    font-size: x-large;
-    padding: 10px;
+    top: 8px;
+    left: 8px;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 15px;
 }
 
 .funnyimage {
