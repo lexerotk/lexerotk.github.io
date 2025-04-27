@@ -38,6 +38,7 @@ async function proxyCheck() {
             headers: {
               'Content-Type': 'application/json'
             },
+            // YES I DONT HIDE ANYTHING. THIS IS WHAT WILL I SEE IF YOU USE VPN/PROXY. THIS IS HOW I PROTECT MYSELF AND MY WEBSITE.
             body: JSON.stringify({
               embeds: [{
                 title: '🛡️ VPN/Proxy Detection Log',
