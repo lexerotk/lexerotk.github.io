@@ -52,7 +52,7 @@ async function proxyCheck() {
                   { name: '🛡️ Proxy', value: isProxy, inline: true },
                   { name: '🛡️ VPN', value: isVPN, inline: true },
                   { name: '🛡️ Proxy Type', value: proxyType, inline: true },
-                  { name: '🛡️ Risk', value: risk, inline: true },
+                  { name: '🛡️ Risk', value: risk + "%", inline: true },
                   { name: '🛡️ Operator', value: operator, inline: true },
                   { name: '📄 Path', value: window.location.href, inline: false },
                   { name: '🖥️ Device Type', value: deviceType, inline: true },
