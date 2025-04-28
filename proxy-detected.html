@@ -19,13 +19,43 @@
     p {
       font-size: 24px;
     }
+    h2 {
+      font-size: 35px;
+    }
+
+    #error {
+      display: none;
+    }
   </style>
 </head>
 <body>
-    <audio src="/assets/etc/bro.mp4" autoplay></audio>
-    <h1><u>VPN / Proxy Connection Detected</u></h1>
-    <p>Your session info has been <u>logged</u> and <u>sent</u> to the site admin.</p>
-    <p><b><u>You aren't smart.</u></b></p>
+    <div id="error">
+      <audio id="bg" src="/assets/etc/hellsirens.mp3"></audio>
+      <h1><u>VPN / Proxy Connection Detected</u></h1>
+      <p>Your behavior is <u>legally</u> monitored.</p>
+      <p>All your device, browser and behavior information is recorded.<br>Which also contains some unique info too. So your VPN/Proxy isn't enough to hide yourself. </p>
+      <h2><b><u>Good luck.</u></b></h2>
+    </div>
+    <script>
+      function goFullscreen() {
+        const elem = document.documentElement;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+        }
+      }
+      
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          alert("???????? ?????????????? ????????????\n????????????????? ???? ???????????????? ???????\n????????????? ?????????????? ???????")
+          goFullscreen()
+          document.getElementById("error").style.display = "inline"
+          document.getElementById('bg').play(); //
+        }, 1000); 
+      });
+      </script>
 </body>
 </html>
-
