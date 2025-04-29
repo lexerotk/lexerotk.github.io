@@ -1,61 +1,87 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" href="/assets/etc/horror.png" type="image/x-icon">
-  <title>IDIOT</title>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="659fdca6-50a0-447d-9530-a5fc940e1935"></script>
-  <style>
-    body {
-      background-color: black;
-      color: #c90014;
-      font-family: Agave, monospace;
-      text-align: center;
-      margin-top: 100px;
-    }
-    h1 {
-      font-size: 48px;
-    }
-    p {
-      font-size: 24px;
-    }
-    h2 {
-      font-size: 35px;
-    }
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/assets/etc/horror.png" type="image/x-icon">
+    <title>IDIOT</title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="659fdca6-50a0-447d-9530-a5fc940e1935"></script>
+    <style>
+        body {
+            background-color: black;
+            color: #c90014;
+            font-family: Agave, monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+        }
 
-    #error {
-      display: none;
-    }
-  </style>
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 35px;
+        }
+
+        #error {
+            display: none;
+        }
+
+        #button {
+            display: none;
+            color: #c90014;
+            background-color: #000;
+            border: 3px solid #c90014;
+            border-radius: 20px;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: 800;
+            color: #c90014;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <button id="button" onclick="btnClick()">????</button>
     <div id="error">
-      <audio id="bg" src="/assets/etc/hellsirens.mp3"></audio>
-      <h1><u>VPN / Proxy Connection Detected</u></h1>
-      <p>Your behavior is <u>legally</u> monitored.</p>
-      <p>All your device, browser and behavior information is recorded.<br>Which also contains some unique info too. So your VPN/Proxy isn't enough to hide yourself. </p>
-      <h2><b><u>Good luck.</u></b></h2>
+        <audio id="bg" src="/assets/etc/hellsirens.mp3"></audio>
+        <h1><u>VPN / Proxy Connection Detected</u></h1>
+        <p>Your behavior is <u>legally</u> monitored.</p>
+        <p>All your device, browser and behavior information is recorded.<br>Which also contains some unique info too. So your VPN/Proxy isn't enough to hide yourself. </p>
+        <h2><b><u>Good luck.</u></b></h2>
     </div>
     <script>
-      function goFullscreen() {
-        const elem = document.documentElement;
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) {
-          elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) {
-          elem.msRequestFullscreen();
+        function goFullscreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
         }
-      }
-      
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          alert("???????? ?????????????? ????????????\n????????????????? ???? ???????????????? ???????\n????????????? ?????????????? ???????")
-          goFullscreen()
-          document.getElementById("error").style.display = "inline"
-          document.getElementById('bg').play(); //
-        }, 1000); 
-      });
-      </script>
+
+        function btnClick() {
+            goFullscreen()
+            document.getElementById("button").style.display = "none"
+            setTimeout(() => {
+                document.getElementById("error").style.display = "inline"
+                document.getElementById("bg").play()
+            }, 0);
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                alert("???????? ?????????????? ????????????\n????????????????? ???? ???????????????? ???????\n????????????? ?????????????? ???????")
+                document.getElementById("button").style.display = "inline"
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

@@ -201,9 +201,14 @@ hr {
     width: 80%;
 }
 
-.spotifyiframe {
+.iframeplaylist {
     width: 90%;
     height: 500px;
+}
+
+.iframesong {
+    width: 90%;
+    height: 152px;
 }
 
 #quote {
@@ -215,7 +220,7 @@ hr {
 
 .pagenotice {
     text-align: center;
-    width: 80%;
+    width: 90%;
 }
 
 footer {

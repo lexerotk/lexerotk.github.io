@@ -1,10 +1,10 @@
 const quotes  = [
     "Embrace Darkness",
-    "I win lol",
-    'I wonder what does the button "???" do',
-    "Fuck you TEMPER :clown:",
-    "Metal >>> Vocaloid Songs",
-    "Who is depressed 🤠"
+    "I win",
+    "Wanna visit TEMPER's Circus? 💀",
+    "kys TEMPER :clown:",
+    "Metal >>> Vocaloid",
+    "Blud thinks she is the villain."
 ]
 
 let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]

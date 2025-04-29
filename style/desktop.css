@@ -197,9 +197,14 @@ hr {
     width: 65%;
 }
 
-.spotifyiframe {
+.iframeplaylist {
     width: 35%;
     height: 500px;
+}
+
+.iframesong {
+    width: 35%;
+    height: 152px;
 }
 
 #quote {

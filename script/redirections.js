@@ -22,6 +22,6 @@ function contact(){
     location.href = "/pages/contact.html"
 }
 
-function temper(){
-    location.href = "/pages/temperthewhore.html"
+function circus(){
+    location.href = "/pages/temperscircus.html"
 }
