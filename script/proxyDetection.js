@@ -5,7 +5,7 @@ async function proxyCheck() {
       function getReadableTimestamp() {
         const now = new Date();
         const day = now.getDate().toString().padStart(2, '0');
-        const month = (now.getMonth() + 1).toString().padStart(2, '0'); // 0-indexli olduğu için +1
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
         const year = now.getFullYear();
         const hours = now.getHours().toString().padStart(2, '0');
         const minutes = now.getMinutes().toString().padStart(2, '0');
@@ -33,14 +33,12 @@ async function proxyCheck() {
       const country = proxyCheckAPI[ip].country || "Unknown";
       const region = proxyCheckAPI[ip].region || "Unknown";
       const city = proxyCheckAPI[ip].city || "Unknown";
-
       const language = navigator.language;
       const screenRes = `${screen.width}x${screen.height}`;
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       const touchSupport = 'ontouchstart' in window ? "Yes" : "No";
 
-    // GPU bilgisi (WebGL)
-      let gpu = "Bilinmiyor";
+      let gpu = "Unknown";
       try {
         const canvas = document.createElement("canvas");
         const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
@@ -48,7 +46,6 @@ async function proxyCheck() {
         gpu = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
       } catch (e) {}
 
-    // Canvas fingerprint
     function getCanvasFingerprint() {
       const canvas = document.createElement("canvas");
       const ctx = canvas.getContext("2d");
@@ -62,10 +59,8 @@ async function proxyCheck() {
     }
 
       const fingerprint = getCanvasFingerprint();
-  
       const parser = new UAParser();
       const deviceInfo = parser.getResult();
-  
       const browserName = deviceInfo.browser.name || "Unknown";
       const browserVersion = deviceInfo.browser.version || "Unknown";
       const osName = deviceInfo.os.name || "Unknown";
@@ -122,7 +117,7 @@ async function proxyCheck() {
       }
   
     } catch (error) {
-      console.error('VPN CHECK ERROR:', error);
+      console.error('PROXY DETECTION ERROR:', error);
     }
   }
   

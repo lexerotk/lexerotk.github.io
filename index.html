@@ -9,7 +9,7 @@
     <script defer src="https://cloud.umami.is/script.js" data-website-id="659fdca6-50a0-447d-9530-a5fc940e1935"></script>
 </head>
 <body>
-    <div id="loading" style="background-color:black; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; color: white;">Waiting for sources...</div>
+    <div id="loading" style="background-color:black; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; color: white;"></div>
     <div id="container">
         <section style="border: 0;">
             <img src="/assets/avatars/lexerotk.jpg" alt="lexeotk's avatar" id="avatar">
@@ -27,20 +27,20 @@
             <a href="/redirect/reddit.html" target="_blank"><img class="socialicons" src="./assets/social/reddit.svg" alt="Reddit Logo"></a>
         </section>
         <section style="flex-direction: row; flex-wrap: wrap;">
-            <button onclick="about()">About Me</button>
-            <button onclick="thoughts()">Thoughts</button>
-            <button onclick="coolpeople()">Cool People</button>
-            <button onclick="circus()">Circus</button>
+            <button onclick="fadeTo('/pages/about.html')">About Me</button>
+            <button onclick="fadeTo('/pages/thoughts.html')">Thoughts</button>
+            <button onclick="fadeTo('/pages/coolpeople.html')">Cool People</button>
+            <button onclick="fadeTo('/pages/temperscircus.html')">Circus</button>
+            <button onclick="fadeTo('/pages/projects.html')">Projects</button>
         </section>  
         <footer>
             <span class="pagenotice"><a href="https://github.com/lexerotk/lexerotk.github.io" target="_blank">View Source Code</a> | by lexerotk</span>
-            <span class="pagenotice">This website is using <a href="https://umami.is">Umami</a> for measuring page traffic, which is open source and privacy focused.</span>
-            <span class="pagenotice">Performance & security by <a href="https://cloudflare.com">Cloudflare</a>. VPN/Proxy detection is by <a href="https://proxycheck.io">proxycheck.io</a>.</span>
+            <span class="pagenotice">This website is using <a href="https://umami.is" target="_blank">Umami</a> for measuring page traffic, which is open source and privacy focused.</span>
+            <span class="pagenotice">Performance & security by <a href="https://cloudflare.com" target="_blank">Cloudflare</a>. VPN/Proxy detection is by <a href="https://proxycheck.io" target="_blank">proxycheck.io</a>.</span>
         </footer>
     </div>
 
-    <script src="/script/redirections.js"></script>
-    <script src="/script/mobileStyleHandler.js" defer></script>
+    <script src="/script/main.js" defer></script>
     <script src="/script/page-specific/index/quote.js"></script>
 </body>
 </html>

@@ -9,5 +9,5 @@ const quotes  = [
 
 let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
 
-console.log("LOG - Random quote for this page: "+ randomQuote)
+console.log("Random quote for this page: "+ randomQuote)
 document.getElementById("quote").innerHTML = randomQuote;
