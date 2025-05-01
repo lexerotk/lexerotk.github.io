@@ -269,3 +269,63 @@ footer {
     max-width: 400px;
     max-height: 400px;
 }
+
+.project {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 550px;
+    height: 100px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: clamp(10px, 3vh, 20px);
+    flex-direction: row;
+    flex-wrap:wrap;
+    gap: 30px;
+    overflow: clip;
+}
+
+.project-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.project > .textarea {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: clamp(50%, 25vw, 70%);
+    overflow: hidden;
+}
+
+.project-title {
+    font-size: 23px;
+    color: white;
+}
+
+.project-title:hover {
+    text-decoration: underline;
+}
+
+.project-desc {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+}
+
+.project-lang {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+}
+
+.project-lang-icon {
+    width: 20px;
+}
+
+.project > .textarea > .textarea{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+}

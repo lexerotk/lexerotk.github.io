@@ -273,3 +273,65 @@ footer {
     max-width: 300px;
     max-height: 300px;
 }
+
+.project {
+    border: 3px solid white;
+    border-radius: 20px;
+    width: 320px;
+    height: 60px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: clamp(10px, 3vh, 20px);
+    margin-bottom: clamp(10px, 3vh, 20px);
+    flex-direction: row;
+    flex-wrap: no   wrap;
+    gap: 40px;
+    overflow:visible;
+}
+
+.project-icon {
+    width: 75px;
+    height: 75px;
+}
+
+.project > .textarea {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: clamp(50%, 45vw, 100%);
+    overflow: hidden;
+}
+
+.project-title {
+    font-size: 17px;
+    color: white;
+    
+}
+
+.project-title:hover {
+    text-decoration: underline;
+}
+
+.project-desc {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+}
+
+.project-lang {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 11px;
+}
+
+.project-lang-icon {
+    width: 15px;
+}
+
+.project > .textarea > .textarea{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+}
