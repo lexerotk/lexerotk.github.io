@@ -8,6 +8,6 @@ Coded with plain HTML, CSS and JavaScript. Nothing special.
 
 Hosting is by [Github Pages](https://github.io)
 
-Performance & security by [Cloudflare](https://cloudflare.com). VPN/Proxy detection is by [proxycheck.io](https://proxycheck.io).
+Performance & security by [Cloudflare](https://cloudflare.com).
 
 Using [Umami](https://umami.is/) for measuring page traffic. Which is open-source and privacy focused.
