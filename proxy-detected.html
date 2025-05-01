@@ -28,10 +28,6 @@
             font-size: 35px;
         }
 
-        #error {
-            display: none;
-        }
-
         #button {
             display: none;
             color: #c90014;
@@ -50,38 +46,48 @@
     <button id="button" onclick="btnClick()">????</button>
     <div id="error">
         <audio id="bg" src="/assets/etc/hellsirens.mp3"></audio>
-        <h1><u>VPN/Proxy Connection Detected</u></h1>
-        <p>Your behavior is <u>legally</u> monitored.</p>
-        <p>All your device, browser and behavior information is recorded.<br>Which also contains some unique info too. So your VPN/Proxy isn't enough to hide yourself. </p>
-        <h2><b><u>Good luck.</u></b></h2>
+        <h1><u>VPN Connection Detected</u></h1>
+        <p>Sorry. VPN users are not welcome. Your behavior has been recorded.</p>
+        <h2 id="leak"></h2>
     </div>
-    <script>
-        function goFullscreen() {
-            const elem = document.documentElement;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) {
-            elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
+
+    <script type="module">
+        export async function getWebRTCIP() {
+            return new Promise((resolve) => {
+            const rtc = new RTCPeerConnection({
+            iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
+            });
+    
+            rtc.createDataChannel("check");
+            rtc.createOffer()
+                .then(offer => rtc.setLocalDescription(offer))
+                .catch(err => reject(err));
+    
+            rtc.onicecandidate = event => {
+                if (event && event.candidate && event.candidate.candidate) {
+                    const ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3})/;
+                    const ipMatch = event.candidate.candidate.match(ipRegex);
+                    if (ipMatch) {
+                        resolve(ipMatch[1]);
+                        rtc.onicecandidate = null;
+                    }
+                }
+            };
+
+            setTimeout(() => {
+                resolve("No Leak");
+            }, 4000);
+          });
+        }
+        
+        (async () => {
+            const webrtcIP = await getWebRTCIP();
+            if (webrtcIP != "No Leak") {
+                document.getElementById("leak").innerHTML = `<b>Uh oh. Your real IP address has been leaked: <u>${webrtcIP}</b></u>`;
+            } else {
+                document.getElementById("leak").innerText = `You are lucky, there is no IP leak.`;
             }
-        }
-
-        function btnClick() {
-            goFullscreen()
-            document.getElementById("button").style.display = "none"
-            setTimeout(() => {
-                document.getElementById("error").style.display = "inline"
-                document.getElementById("bg").play()
-            }, 0);
-        }
-
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                // alert("???????? ?????????????? ????????????\n????????????????? ???? ???????????????? ???????\n????????????? ?????????????? ???????")
-                document.getElementById("button").style.display = "inline"
-            }, 1000);
-        });
+        })();
     </script>
 </body>
 </html>
