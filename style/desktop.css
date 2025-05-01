@@ -24,7 +24,7 @@ body {
 }
 
 body.fade-in {
-    animation: fadeInLight 0.3s ease-in forwards;
+    animation: fadeInLight 0.25s ease-in forwards;
 }
   
 @keyframes fadeInLight {
@@ -37,7 +37,7 @@ body.fade-in {
 }
   
 body.fade-out {
-    animation: fadeOutDark 0.3s ease-out forwards;
+    animation: fadeOutDark 0.25s ease-out forwards;
 }
   
 @keyframes fadeOutDark {

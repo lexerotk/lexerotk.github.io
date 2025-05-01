@@ -25,5 +25,5 @@ function fadeTo(url) {
   
     setTimeout(() => {
         location.href = url;
-    }, 300); 
+    }, 250); 
 }
