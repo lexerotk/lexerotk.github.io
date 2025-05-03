@@ -38,7 +38,16 @@
         </footer>
     </div>
 
+    <script>
+        // LOAD A RANDOM QUOTE EVERY TIME PAGE LOADS
+        const quotes  = [
+            "Embrace Darkness.",
+            "Removed proxy detection.",
+            "Choose wisely who to trust and who not to trust.",
+        ]
+        let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+        document.getElementById("quote").innerHTML = randomQuote;
+    </script>
     <script src="/script/main.js" defer></script>
-    <script src="/script/page-specific/index/quote.js"></script>
 </body>
 </html>
