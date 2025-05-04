@@ -13,14 +13,15 @@
     display: none;
 }
 
-html {
-    height: 100vh;
-    overflow: visible;
-}
+html, body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+ }
 
 body {
     background-color: #000;
-    overflow: auto;
 }
 
 body.fade-in {

@@ -13,14 +13,16 @@
     display: none;
 }
 
-html {
-    height: 100vh;
-    overflow: visible;
-}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    place-items : center;
+ }
 
 body {
     background-color: #000;
-    overflow: auto;
 }
 
 body.fade-in {
@@ -58,8 +60,10 @@ body.fade-out {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    min-height: 100vh;
     height: 100%;
+    width: 90%;
+    color: white;
     flex-direction: column;
     gap: clamp(40px,10vh,60px);
 }
@@ -252,7 +256,7 @@ footer {
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-    margin-top: clamp(10x, 3vh, 30px);
+    margin-top: auto;
     margin-bottom: clamp(10px, 3vh, 30px)
 }
 
