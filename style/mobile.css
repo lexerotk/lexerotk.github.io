@@ -60,7 +60,9 @@ body.fade-out {
     align-items: center;
     justify-content: center;
     color: white;
+    min-height: 100vh;
     height: 100%;
+    width: 95%;
     flex-direction: column;
     gap: clamp(40px,10vh,60px);
 }
@@ -251,13 +253,13 @@ hr {
 }
 
 footer {
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-    margin-top: clamp(10x, 3vh, 30px);
+    margin-top: auto;
     margin-bottom: clamp(10px, 3vh, 30px);
 }
 
