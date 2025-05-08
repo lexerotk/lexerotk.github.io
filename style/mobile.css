@@ -281,7 +281,7 @@ footer {
     border: 3px solid white;
     border-radius: 20px;
     width: 320px;
-    height: 60px;
+    max-height: 100px;
     padding: 30px;
     display: flex;
     align-items: center;
@@ -297,12 +297,13 @@ footer {
 .project-icon {
     width: 75px;
     height: 75px;
+    border-radius: 7.5px;
 }
 
 .project > .textarea {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     width: clamp(50%, 45vw, 100%);
     overflow: hidden;
 }
