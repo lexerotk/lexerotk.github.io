@@ -112,7 +112,7 @@ section {
 .socialicons{
     width: clamp(40px, 12vw, 52px);
     border-radius: 50%;
-    
+    filter: grayscale(1);
 }
 
 button {
