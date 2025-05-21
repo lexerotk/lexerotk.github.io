@@ -10,9 +10,12 @@
 <body>
     <div id="loading" style="background-color:black; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; color: white;"></div>
     <button onclick="fadeTo('/index.html')" id="goback">&nbsp;&leftarrow;&nbsp;</button>
+    <audio id="theme" src="/assets/etc/tempertheme.opus" autoplay loop></audio>
     <div id="container">
-        <section>
-            <h1>TEMPER's CIRCUS 🤡</h1>
+        <section style="flex-direction: row; flex-wrap: wrap; gap: 30px;">
+            <img src="/assets/funnyimages/skull.gif" width="35px">
+            <h1>TEMPER's CIRCUS</h1>
+            <img src="/assets/funnyimages/skull.gif" width="35px">
         </section>
         <section>
             <span class="text pagenotice">Welcome to the circus. Meet our clown TEMPER (aka Elli)</span>
@@ -22,27 +25,33 @@
             <img src="/assets/funnyimages/img2.png" alt="'Unfunny'" class="funnyimage">
             <img src="/assets/funnyimages/img12.jpg" alt="PEAK STALKING" class="funnyimage">
             <img src="/assets/funnyimages/img3.png" alt="Bro got it wrong" class="funnyimage">
-            <img src="/assets/funnyimages/img4.png" alt="NAAHHHHH" class="funnyimage">
-            <img src="/assets/funnyimages/trolley.png" alt="Trolley" class="funnyimage">
+            <img src="/assets/funnyimages/trollpvz.gif" alt="Troll PVZ" height="50px" width="50px" class="funnyimage">
+            <img src="/assets/funnyimages/img4.png" alt="NAAHHHHH" class="funnyimage"
             <img src="/assets/funnyimages/img5.png" alt="NUH UH" class="funnyimage">
             <img src="/assets/funnyimages/img10.png" alt="No Grass?" class="funnyimage">
             <img src="/assets/funnyimages/img11.png" alt="Yup, NO FUCKING GRASS" class="funnyimage">
+            <img src="/assets/funnyimages/skol.png" alt="Skol" class="funnyimage">
             <img src="/assets/funnyimages/friendship.jpg" alt="Ended" class="funnyimage">
             <img src="/assets/funnyimages/img6.png" alt="Bro is talking to the walls" class="funnyimage">
-            <img src="/assets/funnyimages/img7.png" alt="No VPNs?" class="funnyimage"><br>
+            <img src="/assets/funnyimages/dies.gif" alt="Dies" class="funnyimage">
+            <img src="/assets/funnyimages/img7.png" alt="No VPNs?" class="funnyimage">
             <img src="/assets/funnyimages/img8.png" alt="Facts" class="funnyimage">
             <img src="/assets/funnyimages/img9.png" alt="Shush" class="funnyimage">
+            
         </section>
+        <img src="/assets/funnyimages/trolley.png" alt="Trolley" class="funnyimage">
         <section>
             <h1>Cool People 💀</h2>
             <div class="card">
                 <img src="/assets/funnyimages/whitenigga.png" alt="TEMPER" class="avatar">
                 <div class="textarea">
-                    <span class="text username">WHITE NIGGA</span>
-                    <span class="alttext">Experienced Clown, E-girl ahh whore</span>
+                    <span class="text username">WHITE NIGGA </span>
+                    <span class="alttext">Experienced Clown, E-girl ahh whore, schizophrenic</span>
                 </div>
             </div>
-            <span class="text">Username: tttemperrr. Go make fun of her lmao.</span>
+            <span class="text pagenotice">Username: tttemperrr.</span>
+            <span class="text pagenotice">Bro has lots of different alt accounts that she calls them as <u>friends</u>, bro has schizophrenia <img src="/assets/funnyimages/skull.gif" width="20px"></span>
+            <span class="text pagenotice"><strong>Go make fun of her :trolley:</strong></span>
         </section>
         <section>
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3CVLHZAKqvPdAxFheSrbif?utm_source=generator&theme=0" class="iframeplaylist" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -53,7 +62,10 @@
             <span class="pagenotice">Performance & security by <a href="https://cloudflare.com" target="_blank">Cloudflare</a>.</span>
         </footer>
     </div>
-
+    <script>
+        document.getElementById("theme").volume = 0.3
+        document.getElementById("theme").play
+    </script>
     <script src="/script/main.js" defer></script>
 </body>
 </html>
