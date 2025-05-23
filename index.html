@@ -15,7 +15,7 @@
     <title>lexerotk's Unadorned Site</title>
     <link rel="shortcut icon" href="/assets/avatars/lexerotk.jpg" type="image/x-icon">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="659fdca6-50a0-447d-9530-a5fc940e1935"></script>
-    <meta http-equiv="refresh" content="0;url=/pages/circus.html"> <!-- temporary -->
+    <script defer src="/script/securitycheck.js" data-next="/index.html"></script>
 </head>
 <body>
     <div id="loading" style="background-color:black; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; color: white;"></div>
@@ -38,7 +38,7 @@
             <button onclick="fadeTo('/pages/about.html')">About Me</button>
             <button onclick="fadeTo('/pages/thoughts.html')">Thoughts</button>
             <button onclick="fadeTo('/pages/coolpeople.html')">Cool People</button>
-            <button onclick="fadeTo('/pages/circus.html')">TEMPER's Circus</button>
+            <button class="circus-button onclick="fadeTo('/pages/circus.html')">TEMPER's Circus</button>
             <button onclick="fadeTo('/pages/projects.html')">Projects</button>
         </section> 
         <footer>
@@ -49,12 +49,16 @@
     </div>
     <!-- SCRIPT -->
     <script>
-        // Bypass the page and go to circus.html
-        location.href = "/pages/circus.html"
         
         // LOAD A RANDOM QUOTE EVERY TIME PAGE LOADS
         const quotes  = [
-            "(Removed)",
+            "Don't let the kids use the internet.",
+            "Mad @tttemperrr :trolley:",
+            "Put all bitch to death.",
+            "Take some Metal music cure.",
+            "Hello, visitor.",
+            "THE ONLY THING I KNOW FOR REAL, THERE WIL BE BLOOD, SHED.",
+            "REBOOTED, REARMED, RECHARGED, REBUILT, RESURRECTED!"
         ]
         let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
         document.getElementById("quote").innerHTML = randomQuote;

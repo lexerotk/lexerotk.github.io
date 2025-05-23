@@ -124,6 +124,49 @@ button {
     cursor: pointer;
 }
 
+.circus-button {
+    background-color: transparent; 
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+    animation: circusbuttoncolors 6s linear infinite;
+}
+
+@keyframes circusbuttoncolors {
+    0% {
+        border-color: red;
+        color: red;
+    }
+    16% {
+        border-color: orange;
+        color: orange;
+    }
+    33% {
+        border-color: yellow;
+        color: yellow;
+    }
+    50% {
+        border-color: green;
+        color: green;
+    }
+    66% {
+        border-color: blue;
+        color: blue;
+    }
+    83% {
+        border-color: indigo;
+        color: indigo;
+    }
+    100% {
+        border-color: violet;
+        color: violet;
+    }
+}
+
 h1 {
     font-size: clamp(25px, 2.2vw, 35px);
     font-weight: 900;
