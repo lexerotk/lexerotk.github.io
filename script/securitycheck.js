@@ -17,6 +17,6 @@
     const threeHours = 3 * 60 * 60 * 1000;
 
     if (!trust || trust.ip !== userIp || now - trust.timestamp > threeHours) {
-        window.location.href = `gate.html?next=${encodeURIComponent(nextPage)}`;
+        window.location.href = `/gate.html?next=${encodeURIComponent(nextPage)}`;
     }
 })();

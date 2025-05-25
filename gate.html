@@ -15,7 +15,7 @@
         </section>
     </div>
 
-    <script defer src="/script/main.js"></script>
+    
     <script>
         import("https://cdn.jsdelivr.net/npm/ua-parser-js/dist/ua-parser.min.js")
         
@@ -33,19 +33,17 @@
         const threeHours = 3 * 60 * 60 * 1000;
     
         if (trust && trust.ip === userIp && now - trust.timestamp < threeHours) {
-            // Hâlâ geçerli
             window.location.href = nextPage;
             return;
     }
 
     try {
         if (userIp == null) {
-        alert("Security check failed due browser privacy settings. Please allow the API from browser privacy settings or disable extension.")
-        window.location.href = "/blocked.html";
+        alert("Security check failed.")
+        window.location.href = "/blocked.html?browserError=true";
         }
 
         if (trust && trust.ip === userIp && now - trust.timestamp < threeHours) {
-            // Hâlâ geçerli
             window.location.href = nextPage;
             return;
         }
@@ -64,7 +62,7 @@
 
         if (isProxy == "yes" || isVPN == "yes") {
             localStorage.removeItem("security_trust");
-            window.location.href = "/blocked.html";
+            window.location.href = "/blocked.html?browserError=false";
             return;
         }
 
