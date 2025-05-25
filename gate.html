@@ -5,80 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Check</title>
     <link rel="shortcut icon" href="/assets/avatars/lexerotk.jpg" type="image/x-icon">
+    
 </head>
 <body>
     <div class="container">
         <section>
             <h1>HOLD ON</h1>
-            <span class="pagenotice">Checking your connection, please wait...
-            </span>
+            <span class="pagenotice">Checking your connection, please wait...</span>
         </section>
     </div>
-
-    
+    <script src="/script/main.js"></script>
     <script>
         import("https://cdn.jsdelivr.net/npm/ua-parser-js/dist/ua-parser.min.js")
         
         function getQueryParam(name) {
-        const params = new URLSearchParams(window.location.search);
-        return params.get(name) || "index.html";
-    }
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name) || "index.html";
+        }
 
-    (async () => {
-        const nextPage = getQueryParam("next");
-        const userIp = await fetch("https://api.ipify.org?format=json").then(r => r.json()).then(d => d.ip).catch(() => null);
-        const trust = JSON.parse(localStorage.getItem("security_trust") || "null");
-
-        const now = Date.now();
-        const threeHours = 3 * 60 * 60 * 1000;
+        (async () => {
+            const nextPage = getQueryParam("next");
+            const userIp = await fetch("https://api.ipify.org?format=json").then(r => r.json()).then(d => d.ip).catch(() => null);
+            const trust = JSON.parse(localStorage.getItem("security_trust") || "null");
+            const now = Date.now();
+            const threeHours = 3 * 60 * 60 * 1000;
     
-        if (trust && trust.ip === userIp && now - trust.timestamp < threeHours) {
-            window.location.href = nextPage;
-            return;
-    }
+            if (trust && trust.ip === userIp && now - trust.timestamp < threeHours) {
+                window.location.href = nextPage;
+                return;
+            }
 
-    try {
-        if (userIp == null) {
-        alert("Security check failed.")
-        window.location.href = "/blocked.html?browserError=true";
-        }
+            try {
+                if (userIp == null) {
+                alert("Security check failed.")
+                window.location.href = "/blocked.html?browserError=true";
+            }
 
-        if (trust && trust.ip === userIp && now - trust.timestamp < threeHours) {
-            window.location.href = nextPage;
-            return;
-        }
+            if (trust && trust.ip === userIp && now - trust.timestamp < threeHours) {
+                window.location.href = nextPage;
+                return;
+            }
 
-        const proxyCheckAPIRes = await fetch(`https://proxy-detection.vercel.app/api/proxyCheck?ip=${userIp}`);
-        const proxyCheckAPI = await proxyCheckAPIRes.json();
+            const proxyCheckAPIRes = await fetch(`https://proxy-detection.vercel.app/api/proxyCheck?ip=${userIp}`);
+            const proxyCheckAPI = await proxyCheckAPIRes.json();
+            console.log('ProxyCheck.io:', proxyCheckAPI[userIp]);
 
-        console.log('ProxyCheck.io:', proxyCheckAPI[userIp]);
-
-        const parser = new UAParser();
-        const deviceInfo = parser.getResult();
-        const browserName = deviceInfo.browser.name || "Unknown";
-        const isProxy = proxyCheckAPI[userIp].proxy;
-        const isVPN = proxyCheckAPI[userIp].vpn;
+            const parser = new UAParser();
+            const deviceInfo = parser.getResult();
+            const browserName = deviceInfo.browser.name || "Unknown";
+            const isProxy = proxyCheckAPI[userIp].proxy;
+            const isVPN = proxyCheckAPI[userIp].vpn;
         
+            if (isProxy == "yes" || isVPN == "yes") {
+                localStorage.removeItem("security_trust");
+                window.location.href = "/blocked.html?browserError=false";
+                return;
+            }
 
-        if (isProxy == "yes" || isVPN == "yes") {
-            localStorage.removeItem("security_trust");
-            window.location.href = "/blocked.html?browserError=false";
-            return;
-        }
+            localStorage.setItem("security_trust", JSON.stringify({
+                ip: userIp,
+                timestamp: now
+            }));
 
-        localStorage.setItem("security_trust", JSON.stringify({
-            ip: userIp,
-            timestamp: now
-        }));
-
-        window.location.href = nextPage;
-      
-
-    } catch (error) {
+            window.location.href = nextPage;
+        } catch (error) {
         console.error('SECURITY CHECK ERROR:', error);
-    }
-})();
-  </script>
-  
+        }
+    })();
+    </script>
 </body>
 </html>
