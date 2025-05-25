@@ -13,38 +13,40 @@
     display: none;
 }
 
-html, body {
+html,body {
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
- }
+}
 
 body {
-    background-color: #000;
+    background-color: black;
 }
 
 body.fade-in {
     animation: fadeInLight 0.25s ease-in forwards;
 }
-  
+
 @keyframes fadeInLight {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
-  
+
 body.fade-out {
     animation: fadeOutDark 0.25s ease-out forwards;
 }
-  
+
 @keyframes fadeOutDark {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -64,7 +66,7 @@ body.fade-out {
     height: 100%;
     width: 95%;
     flex-direction: column;
-    gap: clamp(40px,10vh,60px);
+    gap: clamp(40px, 10vh, 60px);
 }
 
 a {
@@ -109,14 +111,13 @@ section {
     gap: clamp(18px, 2vw, 30px)
 }
 
-.socialicons{
+.socialicons {
     width: clamp(40px, 12vw, 52px);
     border-radius: 50%;
-    
 }
 
 button {
-    background-color: #000;
+    background-color: black;
     border: 3px solid white;
     border-radius: 20px;
     padding: 15px;
@@ -127,11 +128,11 @@ button {
 }
 
 .circus-button {
-    background-color: transparent; 
+    background-color: transparent;
     border: 3px solid white;
     border-radius: 20px;
     padding: 15px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 800;
     color: white;
     cursor: pointer;
@@ -143,26 +144,32 @@ button {
         border-color: red;
         color: red;
     }
+
     16% {
         border-color: orange;
         color: orange;
     }
+
     33% {
         border-color: yellow;
         color: yellow;
     }
+
     50% {
         border-color: green;
         color: green;
     }
+
     66% {
         border-color: blue;
         color: blue;
     }
+
     83% {
         border-color: indigo;
         color: indigo;
     }
+
     100% {
         border-color: violet;
         color: violet;
@@ -176,9 +183,9 @@ h1 {
 }
 
 .box {
-    overflow:visible;
+    overflow: visible;
     width: clamp(200px, 32vw, 280px);
-    height: clamp(200px, 32vw, 280px);;
+    height: clamp(200px, 32vw, 280px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,7 +196,7 @@ h1 {
     padding: 30px;
 }
 
-.box > .text {
+.box>.text {
     font-size: clamp(15px, 2.1vw, 17px);
     text-align: center;
     font-style: italic;
@@ -197,7 +204,7 @@ h1 {
 
 
 .card {
-    overflow:visible;
+    overflow: visible;
     width: clamp(300px, 35vw, 450px);
     height: 75px;
     display: flex;
@@ -208,24 +215,24 @@ h1 {
     border-radius: 10px;
     padding: 15px;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     gap: 15px;
     overflow: auto;
 }
 
-.card > .avatar {
+.card>.avatar {
     height: 100%;
     border-radius: 50%;
     transition: border-radius .3s ease;
     margin-right: 5px;
 }
 
-.card > .avatar:hover {
+.card>.avatar:hover {
     border-radius: 8%;
     transition: border-radius .3s ease-in-out;
 }
 
-.card > .textarea {
+.card>.textarea {
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -233,13 +240,13 @@ h1 {
     overflow: hidden;
 }
 
-.card > .textarea > .username {
+.card>.textarea>.username {
     font-weight: 600;
     color: white;
     font-size: clamp(18px, 2.8vw, 22px);
 }
 
-.card > .textarea > .alttext { 
+.card>.textarea>.alttext {
     color: rgba(255, 255, 255, 0.6);
     font-size: clamp(12px, 1.3vw, 14px);
     text-overflow: ellipsis;
@@ -257,12 +264,12 @@ h1 {
     border-radius: 10px;
     padding: 30px;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     gap: 15px;
     overflow: auto;
 }
 
-.thought > .text {
+.thought>.text {
     font-size: clamp(16px, 2.5vw, 20px)
 }
 
@@ -332,9 +339,9 @@ footer {
     margin-top: clamp(10px, 3vh, 20px);
     margin-bottom: clamp(10px, 3vh, 20px);
     flex-direction: row;
-    flex-wrap: no   wrap;
+    flex-wrap: nowrap;
     gap: 40px;
-    overflow:visible;
+    overflow: visible;
 }
 
 .project-icon {
@@ -343,7 +350,7 @@ footer {
     border-radius: 7.5px;
 }
 
-.project > .textarea {
+.project>.textarea {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -354,7 +361,7 @@ footer {
 .project-title {
     font-size: 17px;
     color: white;
-    
+
 }
 
 .project-title:hover {
@@ -375,7 +382,7 @@ footer {
     width: 12px;
 }
 
-.project > .textarea > .textarea{
+.project>.textarea>.textarea {
     display: flex;
     flex-direction: row;
     align-items: center;
