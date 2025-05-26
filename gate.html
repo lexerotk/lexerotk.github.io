@@ -51,7 +51,15 @@
             setTimeout(() => {
                 if (isProxy == "yes" || isVPN == "yes" || isTor == "yes") {
                     localStorage.removeItem("security_trust");
-                    document.getElementById("status").innerText = "Abnormal connection detected."
+                    if (isVPN == "yes") {
+                        document.getElementById("status").innerText = "Abnormal connection detected. (VPN)"
+                    } else if (isTor == "yes") {
+                        document.getElementById("status").innerText = "Abnormal connection detected. (TOR)"
+                    } else if (isProxy == "yes") {
+                        document.getElementById("status").innerText = "Abnormal connection detected. (Proxy)"
+                    } else {
+                        document.getElementById("status").innerText = "Abnormal connection detected."
+                    }
                     document.getElementById("status-icon").style.display = "inline"
                     document.getElementById("status-icon").src = "/assets/etc/blocked.png"
                     setTimeout(() => {
