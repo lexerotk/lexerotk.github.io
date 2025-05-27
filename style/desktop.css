@@ -106,6 +106,10 @@ section {
     margin: clamp(10px, 3vh, 20px)
 }
 
+.title-section {
+  margin-top: 50px;
+}
+
 #social {
     flex-direction: row;
     gap: clamp(18px, 2vw, 30px)
@@ -385,4 +389,8 @@ footer {
     align-items: center;
     gap: 5px;
     overflow: hidden;
+}
+
+#discord-preview {
+    width: clamp(350px, 35vw, 425px);
 }

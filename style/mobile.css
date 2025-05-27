@@ -84,7 +84,7 @@ a {
 
 #avatar {
     width: clamp(175px, 11vw, 250px);
-    margin: 20px;
+    margin: 25px;
     border-radius: 50%;
     transition: border-radius .3s ease;
 }
@@ -101,7 +101,11 @@ section {
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-    margin: clamp(10px, 3vh, 20px);
+    margin: clamp(10px, 2.5vh, 15px);
+}
+
+.title-section {
+  margin-top: 50px;
 }
 
 #social {
@@ -388,4 +392,8 @@ footer {
     align-items: center;
     gap: 5px;
     overflow: hidden;
+}
+
+#discord-preview {
+    width: clamp(350px, 35vw, 425px);
 }
