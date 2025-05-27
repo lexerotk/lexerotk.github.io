@@ -80,7 +80,7 @@
                     window.location.href = nextPage;
             },2500);
         } catch (error) {
-        alert('SECURITY CHECK ERROR:', error);
+        alert('SECURITY CHECK ERROR:', error || "Unknown network error.");
         window.location.href = "/blocked.html?browserError=true";
         }
     })();
