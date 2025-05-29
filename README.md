@@ -11,3 +11,7 @@ Hosting is by [Github Pages](https://github.io)
 Performance & security by [Cloudflare](https://cloudflare.com).
 
 Using [Umami](https://umami.is/) for measuring page traffic. Which is open-source and privacy focused.
+
+
+[!IMPORTANT]
+> This website uses 2 APIs to take control over VPN, proxy, and Tor users. Please check this repository for more info: [lexerotk/proxy-detection](https://github.com/lexerotk/proxy-detection/)
