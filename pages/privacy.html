@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Privacy</title>
+    <link rel="shortcut icon" href="/assets/avatars/lexerotk.jpg" type="image/x-icon">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="659fdca6-50a0-447d-9530-a5fc940e1935"></script>
+    <script src="/script/securitycheck.js" data-next="/pages/thoughts.html"></script>
+</head>
+<body>
+    <div id="loading" style="background-color:black; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; color: white;"></div>
+    <button onclick="fadeTo('/index.html')" id="goback">&nbsp;&leftarrow;&nbsp;</button>
+    <div id="container">
+        <section class="title-section">
+            <h1>Your Privacy</h1>
+        </section>
+        <section>
+            <span class="pagenotice">Some explanation for paranoids.</span>
+        </section>
+        <section>
+            <div class="bigtextbox">
+                <span class="text">Some people thinks this website is an IP grabber. But in fact, no. <b>I do not store any IP addresses.</b> IP addresses are only being collected to check the security of connection. Your IP address is only stored in your own browser's local storage for 3 hours as trusted IP address to not overdo the security check.</span>
+                <span class="text">The algorithm of the security check is; the website checks your browser's local storage to see if you have the trusted key. If you don't have that or your IP address is changed recently or trusted key is older than 3 hours system collects your IP address with an API and then sends this IP address to a different API to see if your IP address is suspicious or not. Then by the result system writes the trusted key to local storage or sends you to "blocked" page. While these happens IP addreses not stored in anyway, just sent to an API.</span>
+                <span class="text">My website is open-source, meaning you can inspect the code.</span>
+            </div>
+        </section>
+        <footer>
+            <span class="pagenotice"><a href="https://github.com/lexerotk/lexerotk.github.io" target="_blank">View Source Code</a> | by lexerotk</span>
+            <span class="pagenotice">This website is using <a href="https://umami.is" target="_blank">Umami</a> for measuring page traffic, which is open source and privacy focused.</span>
+            <span class="pagenotice">Performance & security by <a href="https://cloudflare.com" target="_blank">Cloudflare</a>.</span>
+        </footer>
+    </div>
+    
+    <script src="/script/main.js" defer></script>
+</body>
+</html>

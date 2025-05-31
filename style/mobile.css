@@ -397,3 +397,21 @@ footer {
 #discord-preview {
     width: clamp(350px, 35vw, 425px);
 }
+
+.bigtextbox {
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: 20px;
+    overflow: scroll;
+    gap: 20px;
+}
+
+.bigtextbox>.text {
+    font-size: clamp(15px, 2.1vw, 17px);
+    line-height: 23px;
+}
