@@ -2,7 +2,7 @@
 
 This is a project for creating some kind of personal website for myself. And this is also being one of my first website projects too. So don't expect it to be perfect for your eyes.
 
-![image](https://github.com/user-attachments/assets/6aa0a54c-7ded-4f92-af7c-2b2e5d135e91)
+![image](https://github.com/user-attachments/assets/fcb6d17a-3fdd-44a2-9fc3-489b8d4752e0)
 
 Created with plain HTML, CSS and JavaScript. Nothing special.
 
