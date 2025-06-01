@@ -31,7 +31,7 @@
 
             try {
                 if (userIp == null) {
-                alert("Security check failed.")
+                alert("Security check has been failed. Please continue.")
                 window.location.href = "/blocked.html?browserError=true";
             }
 
@@ -80,7 +80,7 @@
                     window.location.href = nextPage;
             },2500);
         } catch (error) {
-        alert("SECURITY CHECK ERROR: Undefined error.");
+        alert("Security has been failed with an undefined error. Please continue.");
         window.location.href = "/blocked.html?undefinedError=true";
         }
     })();
