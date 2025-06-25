@@ -18,45 +18,12 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 body {
     background-color: black;
-}
-
-body.fade-in {
-    animation: fadeInLight 0.25s ease-in forwards;
-}
-
-@keyframes fadeInLight {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-body.fade-out {
-    animation: fadeOutDark 0.25s ease-out forwards;
-}
-
-@keyframes fadeOutDark {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-.text {
-    color: white;
-    font-size: 16px;
 }
 
 #container {
@@ -68,7 +35,9 @@ body.fade-out {
     width: 90%;
     color: white;
     flex-direction: column;
-    gap: clamp(40px, 10vh, 60px);
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 a {
@@ -81,25 +50,6 @@ a:hover {
     text-decoration: underline;
 }
 
-#username {
-    font-size: clamp(20px, 2.5vw, 35px);
-    font-weight: 900;
-    text-decoration: none;
-    color: white;
-}
-
-#avatar {
-    width: clamp(200px, 11vw, 250px);
-    margin: 20px;
-    border-radius: 50%;
-    transition: border-radius .3s ease;
-}
-
-#avatar:hover {
-    border-radius: 8%;
-    transition: border-radius .3s ease-in-out;
-}
-
 section {
     width: 100%;
     display: flex;
@@ -108,20 +58,6 @@ section {
     flex-direction: column;
     gap: 15px;
     margin: clamp(10px, 3vh, 20px)
-}
-
-.title-section {
-  margin-top: 50px;
-}
-
-#social {
-    flex-direction: row;
-    gap: clamp(18px, 2vw, 30px)
-}
-
-.socialicons {
-    width: clamp(56px, 3vw, 64px);
-    border-radius: 50%;
 }
 
 button {
@@ -135,158 +71,6 @@ button {
     cursor: pointer;
 }
 
-.circus-button {
-    background-color: transparent;
-    border: 3px solid white;
-    border-radius: 20px;
-    padding: 15px;
-    font-size: 20px;
-    font-weight: 800;
-    color: white;
-    cursor: pointer;
-    animation: circusbuttoncolors 6s linear infinite;
-}
-
-@keyframes circusbuttoncolors {
-    0% {
-        border-color: red;
-        color: red;
-    }
-
-    16% {
-        border-color: orange;
-        color: orange;
-    }
-
-    33% {
-        border-color: yellow;
-        color: yellow;
-    }
-
-    50% {
-        border-color: green;
-        color: green;
-    }
-
-    66% {
-        border-color: blue;
-        color: blue;
-    }
-
-    83% {
-        border-color: indigo;
-        color: indigo;
-    }
-
-    100% {
-        border-color: violet;
-        color: violet;
-    }
-}
-
-h1 {
-    font-size: clamp(25px, 2.2vw, 35px);
-    font-weight: 900;
-    margin-bottom: 0;
-}
-
-.box {
-    overflow: visible;
-    width: clamp(180px, 30vw, 260px);
-    height: clamp(180px, 30vw, 260px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: clamp(10px, 3vh, 20px);
-    border: 2px solid white;
-    border-radius: 7%;
-    padding: 30px;
-}
-
-.box>.text {
-    font-size: clamp(13px, 2.1vw, 17px);
-    text-align: center;
-    font-style: italic;
-}
-
-.card {
-    overflow: visible;
-    width: clamp(300px, 35vw, 450px);
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: clamp(5px, 2vh, 20px);
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 15px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    overflow: auto;
-}
-
-.card>.avatar {
-    height: 100%;
-    border-radius: 50%;
-    transition: border-radius .3s ease;
-    margin-right: 5px;
-}
-
-.card>.avatar:hover {
-    border-radius: 8%;
-    transition: border-radius .3s ease-in-out;
-}
-
-.card>.textarea {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    width: clamp(50%, 23.5vw, 70%);
-    overflow: hidden;
-}
-
-.card>.textarea>.username {
-    font-weight: 600;
-    color: white;
-    font-size: clamp(18px, 2.8vw, 22px);
-}
-
-.card>.textarea>.alttext {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: clamp(12px, 1.3vw, 14px);
-    text-overflow: ellipsis;
-}
-
-.thought {
-    overflow: visible;
-    width: clamp(300px, 53vw, 750px);
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: clamp(5px, 2vh, 20px);
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 50px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    overflow: auto;
-}
-
-.thought>.text {
-    font-size: clamp(18px, 3vw, 22px)
-}
-
-hr {
-    background-color: white;
-    color: white;
-    border: 1px solid white;
-    width: 65%;
-}
-
 .iframeplaylist {
     width: 35%;
     height: 500px;
@@ -297,120 +81,26 @@ hr {
     height: 152px;
 }
 
-#quote {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 15px;
-    font-style: italic;
-    text-align: center;
+.hidden {
+    opacity: 0;
+}
+
+.fadeIn {
+    animation: fadeInLight 0.75s ease-in forwards;
+}
+
+@keyframes fadeInLight {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .pagenotice {
     text-align: center;
-    width: 80%;
-}
-
-footer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: auto;
-    margin-bottom: clamp(10px, 3vh, 30px)
-}
-
-#goback {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    font-size: x-large;
-    padding: 12px;
-    display: none;
-}
-
-.funnyimage {
-    max-width: 400px;
-    max-height: 400px;
-}
-
-.project {
-    border: 3px solid white;
-    border-radius: 20px;
-    width: 550px;
-    max-height: 150px;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: clamp(10px, 3vh, 20px);
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;
-    overflow: clip;
-}
-
-.project-icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-}
-
-.project>.textarea {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    width: clamp(50%, 25vw, 70%);
-    overflow: hidden;
-}
-
-.project-title {
-    font-size: 23px;
-    color: white;
-}
-
-.project-title:hover {
-    text-decoration: underline;
-}
-
-.project-desc {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 16px;
-}
-
-.project-lang {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
-}
-
-.project-lang-icon {
-    width: 18px;
-}
-
-.project>.textarea>.textarea {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-    overflow: hidden;
-}
-
-#discord-preview {
-    width: clamp(350px, 35vw, 425px);
-}
-
-.bigtextbox {
-    max-width: 70%;
-    display: flex;
-    flex-direction: column;
-    margin: clamp(10px, 3vh, 20px);
-    border: 2px solid white;
-    border-radius: 1rem;
-    padding: 30px;
-    gap: 30px;
-}
-
-.bigtextbox>.text {
-    font-size: clamp(14px, 2.3vw, 18px);
-    line-height: 25px;
+    font-size: 20px;
+    width: 80%; 
 }

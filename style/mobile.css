@@ -13,9 +13,11 @@
     display: none;
 }
 
-html,body {
-    padding: 0;
+html,
+body {
     margin: 0;
+    padding: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -24,8 +26,67 @@ body {
     background-color: black;
 }
 
-body.fade-in {
-    animation: fadeInLight 0.25s ease-in forwards;
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: 100%;
+    width: 90%;
+    color: white;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    margin: clamp(10px, 3vh, 20px)
+}
+
+button {
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+}
+
+.iframeplaylist {
+    width: 35%;
+    height: 500px;
+}
+
+.iframesong {
+    width: 35%;
+    height: 152px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.fadeIn {
+    animation: fadeInLight 0.75s ease-in forwards;
 }
 
 @keyframes fadeInLight {
@@ -38,380 +99,8 @@ body.fade-in {
     }
 }
 
-body.fade-out {
-    animation: fadeOutDark 0.25s ease-out forwards;
-}
-
-@keyframes fadeOutDark {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-.text {
-    color: white;
-    font-size: 15px;
-}
-
-#container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    min-height: 100vh;
-    height: 100%;
-    width: 95%;
-    flex-direction: column;
-    gap: clamp(40px, 10vh, 60px);
-}
-
-a {
-    text-decoration: none;
-    font-weight: 700;
-    color: white;
-}
-
-#username {
-    font-size: clamp(20px, 2.5vw, 35px);
-    font-weight: 900;
-    text-decoration: none;
-    color: white;
-}
-
-#avatar {
-    width: clamp(175px, 11vw, 250px);
-    margin: 25px;
-    border-radius: 50%;
-    transition: border-radius .3s ease;
-}
-
-#avatar:hover {
-    border-radius: 8%;
-    transition: border-radius .3s ease-in-out;
-}
-
-section {
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-    margin: clamp(10px, 2.5vh, 15px);
-}
-
-.title-section {
-  margin-top: 50px;
-}
-
-#social {
-    flex-wrap: wrap;
-    flex-direction: column;
-    flex-direction: row;
-    gap: clamp(18px, 2vw, 30px)
-}
-
-.socialicons {
-    width: clamp(40px, 12vw, 52px);
-    border-radius: 50%;
-}
-
-button {
-    background-color: black;
-    border: 3px solid white;
-    border-radius: 20px;
-    padding: 15px;
-    font-size: 15px;
-    font-weight: 800;
-    color: white;
-    cursor: pointer;
-}
-
-.circus-button {
-    background-color: transparent;
-    border: 3px solid white;
-    border-radius: 20px;
-    padding: 15px;
-    font-size: 15px;
-    font-weight: 800;
-    color: white;
-    cursor: pointer;
-    animation: circusbuttoncolors 6s linear infinite;
-}
-
-@keyframes circusbuttoncolors {
-    0% {
-        border-color: red;
-        color: red;
-    }
-
-    16% {
-        border-color: orange;
-        color: orange;
-    }
-
-    33% {
-        border-color: yellow;
-        color: yellow;
-    }
-
-    50% {
-        border-color: green;
-        color: green;
-    }
-
-    66% {
-        border-color: blue;
-        color: blue;
-    }
-
-    83% {
-        border-color: indigo;
-        color: indigo;
-    }
-
-    100% {
-        border-color: violet;
-        color: violet;
-    }
-}
-
-h1 {
-    font-size: clamp(25px, 7vw, 35px);
-    font-weight: 900;
-    margin-bottom: 0;
-}
-
-.box {
-    overflow: visible;
-    width: clamp(200px, 32vw, 280px);
-    height: clamp(200px, 32vw, 280px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: clamp(10px, 3vh, 20px);
-    border: 2px solid white;
-    border-radius: 7%;
-    padding: 30px;
-}
-
-.box>.text {
-    font-size: clamp(15px, 2.1vw, 17px);
-    text-align: center;
-    font-style: italic;
-}
-
-
-.card {
-    overflow: visible;
-    width: clamp(300px, 35vw, 450px);
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: clamp(5px, 2vh, 20px);
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 15px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    overflow: auto;
-}
-
-.card>.avatar {
-    height: 100%;
-    border-radius: 50%;
-    transition: border-radius .3s ease;
-    margin-right: 5px;
-}
-
-.card>.avatar:hover {
-    border-radius: 8%;
-    transition: border-radius .3s ease-in-out;
-}
-
-.card>.textarea {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    width: clamp(50%, 23.5vw, 70%);
-    overflow: hidden;
-}
-
-.card>.textarea>.username {
-    font-weight: 600;
-    color: white;
-    font-size: clamp(18px, 2.8vw, 22px);
-}
-
-.card>.textarea>.alttext {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: clamp(12px, 1.3vw, 14px);
-    text-overflow: ellipsis;
-}
-
-.thought {
-    overflow: visible;
-    width: clamp(275px, 50vw, 750px);
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: clamp(5px, 2vh, 20px);
-    border: 2px solid white;
-    border-radius: 10px;
-    padding: 30px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    overflow: auto;
-}
-
-.thought>.text {
-    font-size: clamp(16px, 2.5vw, 20px)
-}
-
-hr {
-    background-color: white;
-    color: white;
-    border: 1px solid white;
-    width: 80%;
-}
-
-.iframeplaylist {
-    width: 90%;
-    height: 500px;
-}
-
-.iframesong {
-    width: 90%;
-    height: 152px;
-}
-
-#quote {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
-    font-style: italic;
-    text-align: center;
-}
-
 .pagenotice {
     text-align: center;
-    width: 90%;
-}
-
-footer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: auto;
-    margin-bottom: clamp(10px, 3vh, 30px);
-}
-
-#goback {
-    position: fixed;
-    top: 8px;
-    left: 8px;
     font-size: 20px;
-    padding: 8px;
-    border-radius: 15px;
-}
-
-.funnyimage {
-    max-width: 300px;
-    max-height: 300px;
-}
-
-.project {
-    border: 3px solid white;
-    border-radius: 20px;
-    width: 320px;
-    max-height: 100px;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: clamp(10px, 3vh, 20px);
-    margin-bottom: clamp(10px, 3vh, 20px);
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 40px;
-    overflow: visible;
-}
-
-.project-icon {
-    width: 75px;
-    height: 75px;
-    border-radius: 7.5px;
-}
-
-.project>.textarea {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: clamp(50%, 45vw, 100%);
-    overflow: hidden;
-}
-
-.project-title {
-    font-size: 17px;
-    color: white;
-
-}
-
-.project-title:hover {
-    text-decoration: underline;
-}
-
-.project-desc {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 13px;
-}
-
-.project-lang {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 11px;
-}
-
-.project-lang-icon {
-    width: 12px;
-}
-
-.project>.textarea>.textarea {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-    overflow: hidden;
-}
-
-#discord-preview {
-    width: clamp(350px, 35vw, 425px);
-}
-
-.bigtextbox {
-    max-width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border: 2px solid white;
-    border-radius: 1rem;
-    padding: 20px;
-    overflow: scroll;
-    gap: 20px;
-}
-
-.bigtextbox>.text {
-    font-size: clamp(15px, 2.1vw, 17px);
-    line-height: 23px;
+    width: 80%; 
 }

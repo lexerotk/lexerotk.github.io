@@ -14,16 +14,22 @@ else {
     document.getElementsByTagName("head")[0].innerHTML += '<link preload rel="stylesheet" href="/style/desktop.css">'
 }
 
-// ANIMATION
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("fade-in");
-});
-
-function fadeTo(url) {
-    document.body.classList.remove("fade-in");
-    document.body.classList.add("fade-out");
-  
+function fadeInElement(id, delay) {
     setTimeout(() => {
-        location.href = url;
-    }, 250); 
+        const el = document.getElementById(id);
+        if (el) {
+            el.classList.remove('hidden');
+            el.classList.add('fadeIn');
+        }
+    }, delay);
 }
+
+for (let i = 1; i <= 16; i++) {
+    fadeInElement(`text${i}`, i * 3000 - 1000);
+}
+
+fadeInElement('aud', 50000);
+
+setTimeout(() => {
+        document.getElementById("aud").play()
+}, 50000);
