@@ -12,31 +12,55 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://lexerotk.me/assets/avatars/lexerotk.jpg">
     <link rel="canonical" href="https://lexerotk.me/">
-    <title>aXRzIGdvbmUu</title>
-    <link rel="shortcut icon" href="/assets/avatars/theresnothingleft.jpg" type="image/x-icon">
+    <title>lexerotk's Unadorned Site</title>
+    <link rel="shortcut icon" href="/assets/avatars/lexerotk.jpg" type="image/x-icon">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="659fdca6-50a0-447d-9530-a5fc940e1935"></script>
+    <script src="/script/securitycheck.js" data-next="/index.html"></script>
 </head>
 <body>
     <div id="loading" style="background-color:black; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; color: white;"></div>
     <div id="container">
-        <span id="text1" class="pagenotice hidden">I used to think I was invincible</span>
-        <span id="text2" class="pagenotice hidden">Everything would turn out like I planned</span>
-        <span id="text3" class="pagenotice hidden">With hope for a happy life</span>
-        <span id="text4" class="pagenotice hidden">But how wrong was I</span>
-        <span id="text5" class="pagenotice hidden">There's nothing left now except me and my misery</span>
-        <span id="text6" class="pagenotice hidden">Should I battle on and try to face another day?</span>
-        <span id="text7" class="pagenotice hidden">Or just give up hope all together</span>
-        <span id="text8" class="pagenotice hidden">Clearly it's not going to get any better</span>
-        <span id="text9" class="pagenotice hidden">You know I really tried</span>
-        <span id="text10" class="pagenotice hidden">I hoped I was wrong</span>
-        <span id="text11" class="pagenotice hidden">Bu the life I had in me</span>
-        <span id="text12" class="pagenotice hidden">It's just fucking gone</span>
-        <span id="text13" class="pagenotice hidden">So I guess I will just drive a smile</span>
-        <span id="text14" class="pagenotice hidden">To the side of the bottle</span>
-        <span id="text15" class="pagenotice hidden">And be content in the fact</span>
-        <span id="text16" class="pagenotice hidden">That soon it'll all be over</span>
-        <audio id="aud" class="hidden" src="/assets/StabbedToSleep.mp3" controls></audio>
+        <section style="border: 0;">
+            <img src="/assets/avatars/lexerotk.jpg" alt="lexeotk's avatar" id="avatar">
+            <a id="username" href="/pages/about.html">@lexerotk</a>
+            <span id="quote"></span>
+        </section>
+        <section id="social">
+            <a href="/redirect/discord.html" target="_blank"><img class="socialicons" src="./assets/social/discord.svg" alt="Discord Logo"></a>
+            <a href="/redirect/github.html" target="_blank"><img class="socialicons" src="./assets/social/github.svg" alt="GitHub Logo"></a>
+            <a href="/redirect/spotify.html" target="_blank"><img class="socialicons" src="./assets/social/spotify.svg" alt="Spotify Logo"></a>
+            <a href="/redirect/instagram.html" target="_blank"><img class="socialicons" src="./assets/social/instagram.svg" alt="Instagram Logo"></a>
+            <a href="/redirect/roblox.html" target="_blank"><img class="socialicons" src="./assets/social/roblox.png" alt="Roblox Logo"></a>
+            <a href="/redirect/steam.html" target="_blank"><img class="socialicons" src="./assets/social/steam.svg" alt="Steam Logo"></a>
+            <a href="/redirect/reddit.html" target="_blank"><img class="socialicons" src="./assets/social/reddit.svg" alt="Reddit Logo"></a>
+        </section>
+        <section style="flex-direction: row; flex-wrap: wrap;">
+            <button onclick="fadeTo('/pages/about.html')">About Me</button>
+            <button onclick="fadeTo('/pages/specs.html')">Specs</button>
+            <button onclick="fadeTo('/pages/thoughts.html')">Thoughts</button>
+            <button onclick="fadeTo('/pages/coolpeople.html')">Cool People</button>
+            <button onclick="fadeTo('/pages/projects.html')">Projects</button>
+        </section>
+        <footer>
+            <span class="pagenotice"><a href="https://github.com/lexerotk/lexerotk.github.io" target="_blank">View Source Code</a> | by lexerotk</span>
+            <span class="pagenotice">This website is using <a href="https://umami.is" target="_blank">Umami</a> for measuring page traffic, which is open source and privacy focused.</span>
+            <span class="pagenotice"><a href="/pages/privacy.html">[ - Your Privacy - ]</a></span>
+        </footer>
     </div>
+    <!-- SCRIPT -->
+    <script>
+        // LOAD A RANDOM QUOTE EVERY TIME PAGE LOADS
+        const quotes  = [
+            "Wanna learn why this page has a VPN protection? IT'S BECAUSE OF YOU.",
+            "GIRLS AREN'T TRUSTWORTHY AT ALL.",
+            "Revenant is cute.",
+            "Stay away 'lie spitter'.",
+            "I'm sick of you.",
+            "GO DO SOMETHING USEFUL."
+        ]
+        let randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
+        document.getElementById("quote").innerHTML = randomQuote;
+    </script>
     <script src="/script/main.js" defer></script>
 </body>
 </html>

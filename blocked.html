@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocked</title>
+    <link rel="shortcut icon" href="/assets/avatars/lexerotk.jpg" type="image/x-icon">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="659fdca6-50a0-447d-9530-a5fc940e1935"></script>
+</head>
+<body>
+    <div id="loading" style="background-color:black; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; color: white;"></div>
+    <div id="container">
+        <section>
+            <h1>Uh Oh.</h1>
+            <span id="desc" class="pagenotice">I see you're using a proxy or anonymizing tool. Unfortunately I don't allow VPN connections to this website for security and privacy reasons.</span>
+        </section>
+        <section>
+            <span class="pagenotice"><b><i>I don't store IP adresses. See the source code: <u><a href="https://github.com/lexerotk/lexerotk.github.io" target="_blank">lexerotk.github.io</a></u>, <u><a href="https://github.com/lexerotk/proxy-detection" target="_blank">proxy-detection</a></u></i></b></span>
+        </section>
+    </div>
+    <script>
+        function getQueryParam(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name) || "false";
+        }
+        const browserError = getQueryParam("browserError");
+        const undefinedError = getQueryParam("undefinedError");
+
+        if (browserError == "true") {
+            document.getElementById("desc").innerHTML = 'Security check has been <b>failed</b> due to your browser privacy settings or an extension (or etc.) blocking the APIs. Please disable them for this website to continue.'
+        }
+        if (undefinedError == "true") {
+            document.getElementById("desc").innerHTML = 'Security check has been <b>failed</b> due to an undefined error. The source of the problem may be some kind of connection error.'
+        }
+    </script>
+    <script src="/script/main.js"></script>
+</body>
+</html>
