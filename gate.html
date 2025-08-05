@@ -10,7 +10,7 @@
     <div id="loading" style="background-color:black; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000; color: white;"></div>
     <div class="container">
         <section style="color: white; width: 100%;">
-            <span id="status" style="font-size: 20px;" class="pagenotice">Checking if the connection is safe or not...</span>
+            <span id="status" style="font-size: 20px;" class="pagenotice">Performing a security check, please wait...</span>
             <img id="status-icon" src="/assets/etc/check.png"  width="165px" style="display: none;">
         </section>
     </div>
@@ -30,7 +30,7 @@
 
             try {
                 if (userIp == null) {
-                alert("Security check has been failed. Please continue.")
+                alert("A browser error caused security check to fail. Please continue for more information.")
                 window.location.href = "/blocked.html?browserError=true";
             }
 
@@ -62,7 +62,7 @@
                     document.getElementById("status-icon").style.display = "inline"
                     document.getElementById("status-icon").src = "/assets/etc/blocked.png"
                     setTimeout(() => {
-                        window.location.href = "/blocked.html?browserError=false";
+                        window.location.href = "/blocked.html?proxyDetected=true";
                     }, 1500);
                 return;
                 }
@@ -71,7 +71,7 @@
                     ip: userIp,
                     timestamp: now
                  })); 
-                document.getElementById("status").innerText = "Passed. Redirecting..."
+                document.getElementById("status").innerText = "Safe. Redirecting..."
                 document.getElementById("status-icon").style.display = "inline"
             }, 1000);
 
@@ -79,7 +79,7 @@
                     window.location.href = nextPage;
             },2500);
         } catch (error) {
-        alert("Security check has been failed with an undefined error. Please continue.");
+        alert("An undefined error caused security check to fail. Please continue for more information.");
         window.location.href = "/blocked.html?undefinedError=true";
         }
     })();
