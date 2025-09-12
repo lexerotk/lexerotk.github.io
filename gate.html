@@ -51,13 +51,13 @@
                 if (isProxy == "yes" || isVPN == "yes" || isTor == "yes") {
                     localStorage.removeItem("security_trust");
                     if (isVPN == "yes") {
-                        document.getElementById("status").innerText = "Suspicious connection detected. (VPN)"
+                        document.getElementById("status").innerText = "Flagged. (VPN)"
                     } else if (isTor == "yes") {
-                        document.getElementById("status").innerText = "Suspicious connection detected. (TOR)"
+                        document.getElementById("status").innerText = "Flagged. (TOR)"
                     } else if (isProxy == "yes") {
-                        document.getElementById("status").innerText = "Suspicious connection detected. (Proxy)"
+                        document.getElementById("status").innerText = "Flagged. (Proxy)"
                     } else {
-                        document.getElementById("status").innerText = "Suspicious connection detected."
+                        document.getElementById("status").innerText = "Flagged."
                     }
                     document.getElementById("status-icon").style.display = "inline"
                     document.getElementById("status-icon").src = "/assets/etc/blocked.png"
@@ -79,7 +79,7 @@
                     window.location.href = nextPage;
             },2500);
         } catch (error) {
-        alert("An undefined error caused security check to fail. Please continue for more information.");
+        alert("Undefined error. Please continue for more information.");
         window.location.href = "/blocked.html?undefinedError=true";
         }
     })();
