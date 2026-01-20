@@ -208,6 +208,7 @@ h1 {
     font-size: clamp(13px, 2.1vw, 17px);
     text-align: center;
     font-style: italic;
+    line-height: 25px;
 }
 
 .card {
@@ -393,10 +394,6 @@ footer {
     align-items: center;
     gap: 5px;
     overflow: hidden;
-}
-
-#discord-preview {
-    width: clamp(350px, 35vw, 425px);
 }
 
 .bigtextbox {

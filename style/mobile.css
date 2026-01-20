@@ -394,10 +394,6 @@ footer {
     overflow: hidden;
 }
 
-#discord-preview {
-    width: clamp(350px, 35vw, 425px);
-}
-
 .bigtextbox {
     max-width: 90%;
     display: flex;
